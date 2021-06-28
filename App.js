@@ -5,22 +5,22 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Login from "./screens/Login";
 import Register from "./screens/Register";
-import Home from "./screens/Home";
-import Cart from './screens/Cart';
+import Home from "./components/User/Home";
+import Cart from './components/User/Cart/Cart';
 import ShopkeeperHome from './screens/ShopkeeperHome';
-import AddItem from './screens/AddItem';
-import Shopkeeper from './screens/Shopkeeper';
-import ShopkeeperRegister from './screens/ShopkeeperRegister';
-import Shopname from './components/Shopname';
-import CheckOut from './screens/CheckOut';
+import AddItem from './components/Admin/AddItems/AddItem';
+import Shopkeeper from './components/Admin/auth/Shopkeeper';
+import ShopkeeperRegister from './components/Admin/auth/ShopkeeperRegister';
+import Shopname from './components/User/Shopname';
+import CheckOut from './components/User/Cart/CheckOut';
 import ShopkeeperOrders from './screens/ShopkeeperOrders';
-import CustomerOrder from './screens/CustomerOrder';
-import OrderContents from './screens/OrderContents';
-import Orderlist from './components/Orderlist';
-import OrderList1 from './screens/OrderList1';
+import CustomerOrder from './components/Admin/Orders/CustomerOrder';
+import OrderContents from './components/Admin/Orders/OrderContents';
+import Orderlist from './components/Admin/Orders/Orderlist';
+import OrderList1 from './components/User/Orders/OrderList1';
 import SignOut from './components/SignOut';
-import Uploaddetail from './screens/Uploaddetail';
-import StatusContents from './screens/StatusContents';
+import Uploaddetail from './components/Admin/AddItems/Uploaddetail';
+import StatusContents from './components/User/Orders/StatusContents';
 
 
 export default function App() {

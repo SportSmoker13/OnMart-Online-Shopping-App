@@ -2,12 +2,14 @@ import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
 import { KeyboardAvoidingView, StyleSheet, Text, View } from "react-native";
 import { Input, Button, Image } from "react-native-elements";
-import { auth } from "../../../firebase";
+import { auth } from "../../firebase";
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = "";
+  // const loadingInitialValue = false;
+  // const [loading, setLoading] = useState(loadingInitialValue);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
@@ -19,29 +21,27 @@ const Login = ({ navigation }) => {
   }, []);
 
   const signIn = async () => {
+    // setLoading(true);
     const state = await auth
       .signInWithEmailAndPassword(email, password)
       .catch((error) => alert(error.message));
     setLogin(state);
-    if (login) {
-      return (
-        <View style={[styles.container1, styles.horizontal]}>
-          <ActivityIndicator />
-          <ActivityIndicator size="large" />
-          <ActivityIndicator size="small" color="#0000ff" />
-          <ActivityIndicator size="large" color="#00ff00" />
-        </View>
-      );
-    }
+    // setLoading(false);
   };
 
   return (
+    // <View>
+    // {!loading ? (
+    //   <View style={{flex: 1,alignItems:'center',justifyContent:'center'}}>
+    //     <Image source={require("../../../assets/loadin_gif.gif")} style={{height:200,width:200}}/>
+    //   </View>
+    // ) : (
     <KeyboardAvoidingView behaviour="padding" style={styles.container}>
       <StatusBar styles="dark-theme" />
       <View>
         <Image
           // key={index}
-          source={require("../assets/icon1.png")}
+          source={require("../../../assets/icon1.png")}
           style={{ width: 100, height: 100, marginBottom: 80 }}
         />
       </View>
@@ -80,6 +80,8 @@ const Login = ({ navigation }) => {
         }}
       />
     </KeyboardAvoidingView>
+    // )}
+    // </View>
   );
 };
 export default Login;

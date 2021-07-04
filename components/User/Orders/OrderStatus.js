@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import firebase from "firebase";
-import { auth } from "../../../firebase";
+import { auth } from "../../firebase";
 import OrderList1 from "./OrderList1";
 
 const OrderStatus = ({ navigation }) => {

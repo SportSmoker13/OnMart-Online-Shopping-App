@@ -103,6 +103,7 @@ const CheckOut = ({ route, navigation }) => {
   };
 
   const deleteCart = () => {
+    alert(userOrder);
     {
       cart.map((orders) => {
         firebase
@@ -124,7 +125,7 @@ const CheckOut = ({ route, navigation }) => {
       <View>
         <Image
           // key={index}
-          source={require("../assets/icon1.png")}
+          source={require("../../../assets/icon1.png")}
           style={{ width: 100, height: 100, marginBottom: 80 }}
         />
       </View>

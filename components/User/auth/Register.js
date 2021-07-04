@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { KeyboardAvoidingView, StyleSheet, Text, View } from "react-native";
 import { Button, Image, Input } from "react-native-elements";
-import { auth } from "../../../firebase";
+import { auth } from "../../firebase";
 import firebase from "firebase";
 
 const Register = ({}) => {
@@ -36,7 +36,7 @@ const Register = ({}) => {
       <View>
         <Image
           // key={index}
-          source={require("../assets/icon1.png")}
+          source={require("../../../assets/icon1.png")}
           style={{ width: 100, height: 100, marginBottom: 80 }}
         />
       </View>

@@ -1,4 +1,4 @@
-import { auth } from "../../../firebase";
+import { auth } from "../../firebase";
 
 const SignOut = ({ navigation }) => {
   auth.signOut().then(() => {

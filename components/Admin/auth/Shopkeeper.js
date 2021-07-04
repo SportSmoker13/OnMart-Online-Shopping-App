@@ -1,11 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
-import {
-  KeyboardAvoidingView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { KeyboardAvoidingView, StyleSheet, Text, View } from "react-native";
 import { Image, Input, Button } from "react-native-elements";
 import firebase from "firebase";
 require("firebase/firestore");
@@ -38,7 +33,7 @@ const Shopkeeper = ({ navigation }) => {
       <StatusBar styles="dark-theme" />
       <View>
         <Image
-          source={require("../assets/icon1.png")}
+          source={require("../../../assets/icon1.png")}
           style={{ width: 100, height: 100, marginBottom: 80 }}
         />
       </View>

@@ -6,9 +6,12 @@ import firebase from "firebase";
 
 const Register = ({ navigation }) => {
   const [name, setName] = useState("");
+  const loadingInitialValue = false;
+  const [loading, setLoading] = useState(loadingInitialValue);
 
-  const checkShop = () =>
-    firebase
+  const checkShop = async () => {
+    setLoading(true);
+    await firebase
       .firestore()
       .collection("admin")
       .doc(name)
@@ -20,14 +23,16 @@ const Register = ({ navigation }) => {
           alert("Shop Doesn't Exist!!!");
         }
       });
+    setLoading(false);
+  };
 
-  return (
-    <KeyboardAvoidingView behavior="padding" style={styles.container}>
+  return !loading ? (
+    <View behavior="padding" style={styles.container}>
       <StatusBar style="dark-theme" />
       <View>
         <Image
           // key={index}
-          source={require("../assets/icon1.png")}
+          source={require("../../assets/icon1.png")}
           style={{ width: 100, height: 100, marginBottom: 80 }}
         />
       </View>
@@ -48,7 +53,21 @@ const Register = ({ navigation }) => {
         onPress={checkShop}
         buttonStyle={{ backgroundColor: "#A3E4D7" }}
       />
-    </KeyboardAvoidingView>
+    </View>
+  ) : (
+    <View
+      style={{
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "white",
+      }}
+    >
+      <Image
+        source={require("../../assets/loadin_gif.gif")}
+        style={{ height: 200, width: 200 }}
+      />
+    </View>
   );
 };
 

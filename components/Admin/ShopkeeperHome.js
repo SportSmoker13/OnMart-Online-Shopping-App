@@ -19,8 +19,8 @@ import Order from "react-native-vector-icons/Entypo";
 const ShopkeeperHome = ({ route, navigation }) => {
   const { user } = route.params;
   const images = [
-    require("../images/cart.jpg"),
-    require("../images/4._Staggering_of_courses.jpg"),
+    require("../../images/cart.jpg"),
+    require("../../images/4._Staggering_of_courses.jpg"),
   ];
   const { width } = Dimensions.get("window");
   const height = width * 0.6;
